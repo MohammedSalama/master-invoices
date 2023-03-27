@@ -1,7 +1,7 @@
 @extends('layouts.master2')
 
 @section('title')
-    Login - Invoices
+    Login - Invoices Program
 @stop
 
 

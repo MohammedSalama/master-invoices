@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\InvoicesController;
+use App\Http\Controllers\SectionsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +24,7 @@ Route::get('/', function () {
 });
 
 /**
- *
+ *  Theme
  */
 Route::get('/home', function () {
     return view('home');
@@ -34,4 +35,8 @@ Route::get('/home', function () {
 require __DIR__.'/auth.php';
 
 Route::resource('invoices',InvoicesController::class);
+
+Route::resource('sections',SectionsController::class);
+
+
 Route::get('/{page}', [AdminController::class,'index']);
