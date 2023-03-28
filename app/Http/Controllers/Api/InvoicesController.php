@@ -11,7 +11,7 @@ class InvoicesController extends Controller
     public function index()
     {
         $invoices = Invoices::get();
-        $msg = ["OK"];
-        return response($invoices,200,$msg);
+        return $this->ApiResponse($invoices,'Data retrieved successfully',200);
+
     }
 }

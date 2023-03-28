@@ -43,7 +43,7 @@ class ProductsController extends Controller
             'section_id' => $request->section_id,
             'description' => $request->description,
         ]);
-        session()->flash('Add', 'تم اضافة المنتج بنجاح ');
+        session()->flash('Add', 'Product added successfully');
         return redirect('/products');
     }
 
@@ -88,7 +88,7 @@ class ProductsController extends Controller
             'section_id' => $id,
         ]);
 
-        session()->flash('Edit', 'تم تعديل المنتج بنجاح');
+        session()->flash('Edit', 'Product edited successfully');
         return back();
     }
 
@@ -102,7 +102,7 @@ class ProductsController extends Controller
     {
         $Products = Products::findOrFail($request->pro_id);
         $Products->delete();
-        session()->flash('delete', 'تم حذف المنتج بنجاح');
+        session()->flash('delete', 'Product deleted successfully');
         return back();
     }
 }
