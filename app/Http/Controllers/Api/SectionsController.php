@@ -8,10 +8,11 @@ use Illuminate\Http\Request;
 
 class SectionsController extends Controller
 {
+    use ApiResponseTrait;
+
     public function index()
     {
         $sections = Sections::get();
-        $msg = ["OK"];
-        return response($sections,200,$msg);
+        return $this->ApiResponse($sections,'Data retrieved successfully',200);
     }
 }

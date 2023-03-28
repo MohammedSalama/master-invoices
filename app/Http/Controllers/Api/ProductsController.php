@@ -8,10 +8,12 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
+    use ApiResponseTrait;
+
     public function index()
     {
         $products = Products::get();
-        $msg = ["OK"];
-        return response($products,200,$msg);
+        return $this->ApiResponse($products,'Data retrieved successfully',200);
+
     }
 }
