@@ -22,9 +22,15 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::get('invoices',[InvoicesController::class,'index']);
+Route::get('invoice/{id}',[InvoicesController::class,'show']);
+
 
 Route::get('sections',[SectionsController::class,'index']);
+Route::get('section/{id}',[SectionsController::class,'show']);
+
 
 Route::get('products',[ProductsController::class,'index']);
+Route::get('product/{id}',[ProductsController::class,'show']);
+
 
 
